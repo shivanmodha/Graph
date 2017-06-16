@@ -1,4 +1,4 @@
-package Graph;
+package studios.vanish.graph;
 public class Direction
 {
 	public String Instruction;

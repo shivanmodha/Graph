@@ -1,4 +1,4 @@
-package Graph;
+package studios.vanish.graph;
 public class Neighbor
 {
 	public double distance;

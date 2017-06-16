@@ -1,4 +1,4 @@
-package Graph;
+package studios.vanish.graph;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -405,7 +405,7 @@ public class NodeGrid
 				double z1 = bound1.getDouble("z");
 				if (x1 >= 0)
 				{
-					n.object.Bound_Bottom_Right = new Engine.Vertex(x1, y1, z1);
+					n.object.Bound_Bottom_Right = new GraphVertex(x1, y1, z1);
 				}
 				JSONObject bound2 = structure.getJSONObject("TR");
 				double x2 = bound2.getDouble("x");
@@ -413,7 +413,7 @@ public class NodeGrid
 				double z2 = bound2.getDouble("z");
 				if (x2 >= 0)
 				{
-					n.object.Bound_Top_Right = new Engine.Vertex(x2, y2, z2);
+					n.object.Bound_Top_Right = new GraphVertex(x2, y2, z2);
 				}
 				JSONObject bound3 = structure.getJSONObject("BL");
 				double x3 = bound3.getDouble("x");
@@ -421,7 +421,7 @@ public class NodeGrid
 				double z3 = bound3.getDouble("z");
 				if (x3 >= 0)
 				{
-					n.object.Bound_Bottom_Left = new Engine.Vertex(x3, y3, z3);
+					n.object.Bound_Bottom_Left = new GraphVertex(x3, y3, z3);
 				}
 				JSONObject bound4 = structure.getJSONObject("TL");
 				double x4 = bound4.getDouble("x");
@@ -429,7 +429,7 @@ public class NodeGrid
 				double z4 = bound4.getDouble("z");
 				if (x4 >= 0)
 				{
-					n.object.Bound_Top_Left = new Engine.Vertex(x4, y4, z4);
+					n.object.Bound_Top_Left = new GraphVertex(x4, y4, z4);
 				}
 				String type = structure.getString("type");
 				if (type.equals(StructureType.Building.toString()))

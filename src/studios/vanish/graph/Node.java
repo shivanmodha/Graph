@@ -1,4 +1,4 @@
-package Graph;
+package studios.vanish.graph;
 import java.util.ArrayList;
 public class Node
 {

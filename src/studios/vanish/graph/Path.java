@@ -1,4 +1,4 @@
-package Graph;
+package studios.vanish.graph;
 import java.util.ArrayList;
 public class Path
 {
@@ -18,6 +18,10 @@ public class Path
 		catch (Exception e)
 		{
 			
+		}
+		if (Nodes.size() == 0)
+		{
+			_return = "Empty";
 		}
 		return _return;
 	}
@@ -84,9 +88,9 @@ public class Path
 			Node Parent = Nodes.get(i - 1);
 			Node Current = Nodes.get(i);
 			Node Next = Nodes.get(i + 1);
-			Vector ParentLocation = new Vector(NodeGrid.GetNodeX(Parent), NodeGrid.GetNodeY(Parent), NodeGrid.GetNodeZ(Parent));
-			Vector CurrentLocation = new Vector(NodeGrid.GetNodeX(Current), NodeGrid.GetNodeY(Current), NodeGrid.GetNodeZ(Current));
-			Vector NextLocation = new Vector(NodeGrid.GetNodeX(Next), NodeGrid.GetNodeY(Next), NodeGrid.GetNodeZ(Next));
+			GraphVertex ParentLocation = new GraphVertex(NodeGrid.GetNodeX(Parent), NodeGrid.GetNodeY(Parent), NodeGrid.GetNodeZ(Parent));
+			GraphVertex CurrentLocation = new GraphVertex(NodeGrid.GetNodeX(Current), NodeGrid.GetNodeY(Current), NodeGrid.GetNodeZ(Current));
+			GraphVertex NextLocation = new GraphVertex(NodeGrid.GetNodeX(Next), NodeGrid.GetNodeY(Next), NodeGrid.GetNodeZ(Next));
 			if (CurrentLocation.Z == NextLocation.Z)
 			{
 				ParentLocation.Z = CurrentLocation.Z;
@@ -96,7 +100,7 @@ public class Path
 				double MagnitudeProduct = CurrentLocation.magnitude() * NextLocation.magnitude();
 				double angle = Math.acos(ScalarProduct / MagnitudeProduct);
 				int ANGLE = (int)Math.toDegrees(angle);
-				Vector CrossProduct = CurrentLocation.cross(NextLocation);
+				GraphVertex CrossProduct = CurrentLocation.cross(NextLocation);
 				if (CrossProduct.X > 0 || CrossProduct.Y > 0 || CrossProduct.Z > 0)
 				{
 					ANGLE *= -1;
